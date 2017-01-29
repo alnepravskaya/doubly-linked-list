@@ -82,6 +82,34 @@ describe('LinkedList', () => {
             expect(list.at(position)).to.equal(data);
         });
     });
+    describe('#insertAtBeginning', () => {
+        it('should insert data by index', () => {
+            const list = new LinkedList();
+            const data = 34;
+            const position = 0;
+
+            list.append(32);
+            list.append(47);
+
+            list.insertAt(position, data);
+
+            expect(list.at(position)).to.equal(data);
+        });
+    });
+    describe('#insertAtEnd', () => {
+        it('should insert data by index', () => {
+            const list = new LinkedList();
+            const data = 34;
+            const position = 2;
+
+            list.append(32);
+            list.append(47);
+
+            list.insertAt(position, data);
+
+            expect(list.at(position)).to.equal(data);
+        });
+    });
     describe('#isEmpty', () => {
         it('should return true if list is empty', () => {
             const list = new LinkedList();
@@ -143,6 +171,28 @@ describe('LinkedList', () => {
             expect(list.at(2)).to.equal(4);
             expect(list.at(3)).to.equal(3);
             expect(list.at(4)).to.equal(2);
+        });
+    });
+    describe('#reverse5', () => {
+        it('should reverse the list', () => {
+            const list = new LinkedList();
+
+            list.append(1);
+            list.append(2);
+            list.append(3);
+            list.append(4);
+            list.append(5);
+           
+
+            list.reverse();
+
+            expect(list.head()).to.equal(5);
+            expect(list.tail()).to.equal(1);
+
+            expect(list.at(0)).to.equal(5);
+            expect(list.at(1)).to.equal(4);
+            expect(list.at(2)).to.equal(3);
+            expect(list.at(3)).to.equal(2);
         });
     });
     describe('#indexOf', () => {
